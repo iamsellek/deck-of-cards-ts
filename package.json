@@ -1,6 +1,6 @@
 {
   "name": "deck-of-cards-ts",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Deck of cards package with TypeScript types.",
   "main": "build/index.js",
   "types": "build/index.d.ts",
