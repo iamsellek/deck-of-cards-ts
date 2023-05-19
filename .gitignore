@@ -76,7 +76,7 @@ typings/
 .cache
 
 # build output
-build
+dist
 
 # Nuxt.js build / generate output
 .nuxt
