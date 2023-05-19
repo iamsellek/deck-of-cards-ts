@@ -7,12 +7,13 @@ class Deck {
 
   constructor(numberOfFullDecks: number = 1) {
     this.numberOfFullDecks = numberOfFullDecks;
+    this.shuffle();
+  }
 
+  private resetDeck(): void {
     for (let i = 0; i < this.numberOfFullDecks; i++) {
       this.cards.push(...this.getFullDeck());
     }
-
-    this.shuffle();
   }
 
   private getFullDeck(): Card[] {
@@ -40,6 +41,8 @@ class Deck {
   }
 
   shuffle(): void {
+    this.resetDeck();
+
     for (let i = this.cards.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [this.cards[i], this.cards[j]] = [this.cards[j], this.cards[i]];
