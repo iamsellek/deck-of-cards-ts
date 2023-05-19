@@ -2,8 +2,8 @@
   "name": "deck-of-cards-ts",
   "version": "0.0.1",
   "description": "Deck of cards package with TypeScript types.",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
   "scripts": {
     "build": "tsc -p .",
     "test": "jest",
