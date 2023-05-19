@@ -23,6 +23,6 @@ export interface Card {
   suit: Suit;
   rank: Rank;
   value: Value;
-  secondaryValue?: Value;
+  secondaryValue: Value | null;
   toString: () => CardAsString;
 }

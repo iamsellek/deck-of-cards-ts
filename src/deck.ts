@@ -15,17 +15,18 @@ class Deck {
     this.shuffle();
   }
 
-  getFullDeck(): Card[] {
+  private getFullDeck(): Card[] {
     const cards: Card[] = [];
 
     for (let suit of ALL_SUITS) {
       for (let rank of ALL_RANKS) {
         const value = RANK_TO_VALUE[rank];
-        this.cards.push({
+
+        cards.push({
           suit,
           rank,
           value: Array.isArray(value) ? value[0] : value,
-          secondaryValue: Array.isArray(value) ? value[1] : undefined,
+          secondaryValue: Array.isArray(value) ? value[1] : null,
           toString: () => `${rank} of ${suit}`,
         });
       }
@@ -38,21 +39,19 @@ class Deck {
     return [...this.cards];
   }
 
-  shuffle() {
-    let currentLength = this.cards.length;
-
-    while (currentLength) {
-      let i = Math.floor(Math.random() * currentLength);
-      const temp = this.cards[currentLength];
-      this.cards[currentLength] = this.cards[i];
-      this.cards[i] = temp;
-
-      currentLength--;
+  shuffle(): void {
+    for (let i = this.cards.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [this.cards[i], this.cards[j]] = [this.cards[j], this.cards[i]];
     }
   }
 
-  draw() {
-    // implement
+  draw(): Card | null {
+    return this.cards.pop() ?? null;
+  }
+
+  isThisYourCard(cardOne: Card, cardTwo: Card): boolean {
+    return cardOne.rank === cardTwo.rank && cardOne.suit === cardTwo.suit;
   }
 }
 
