@@ -38,10 +38,10 @@
   },
   "homepage": "https://github.com/iamsellek/deck-of-cards-ts#readme",
   "devDependencies": {
-    "@types/jest": "^29.5.1",
+    "@types/jest": "^29.5.2",
     "jest": "^29.5.0",
-    "make-fixture": "^1.2.1",
+    "make-fixture": "^1.2.2",
     "ts-jest": "^29.1.0",
-    "typescript": "^5.0.4"
+    "typescript": "^5.1.3"
   }
 }
