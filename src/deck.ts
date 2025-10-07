@@ -11,6 +11,8 @@ class Deck {
   }
 
   private resetDeck(): void {
+    this.cards = [];
+
     for (let i = 0; i < this.numberOfFullDecks; i++) {
       this.cards.push(...this.getFullDeck());
     }

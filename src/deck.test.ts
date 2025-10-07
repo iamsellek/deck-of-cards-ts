@@ -73,4 +73,14 @@ describe('Deck tests', () => {
 
     expect(cards[0].toString()).toBe(`${cards[0].rank} of ${cards[0].suit}`);
   });
+
+  it('Empties the deck before resetting it', () => {
+    const deck = new Deck(2);
+
+    expect(deck.getCards().length).toBe(FULL_DECK_CARD_COUNT * 2);
+
+    (deck as any).resetDeck();
+
+    expect(deck.getCards().length).toBe(FULL_DECK_CARD_COUNT * 2);
+  });
 });
