@@ -2,12 +2,13 @@
      "compilerOptions": {
        "declaration": true,
        "strictNullChecks": true,
+       "skipLibCheck": true,
        "target": "es2022",
        "outDir": "dist",
        "module": "nodenext",
        "moduleResolution": "nodenext",
        "sourceMap": true,
-       "lib": ["es2015", "dom", "es2022"],
+       "lib": ["es2023", "dom"],
        "rootDir": "src",
        "types": ["vitest/globals"]
      },
