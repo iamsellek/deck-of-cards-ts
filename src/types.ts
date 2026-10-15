@@ -19,10 +19,14 @@ export type Rank =
 
 export type CardAsString = `${Rank} of ${Suit}`;
 
-export interface Card {
-  suit: Suit;
-  rank: Rank;
-  value: Value;
-  secondaryValue: Value | null;
+// Just the data of a card, so it can be saved, sent and cloned.
+export interface CardData {
+  readonly suit: Suit;
+  readonly rank: Rank;
+  readonly value: Value;
+  readonly secondaryValue: Value | null;
+}
+
+export interface Card extends CardData {
   toString: () => CardAsString;
 }

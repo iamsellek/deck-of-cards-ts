@@ -8,12 +8,13 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsc -p .",
+    "clean": "node -e \"require('fs').rmSync('dist', { recursive: true, force: true })\"",
+    "build": "npm run clean && tsc -p tsconfig.build.json",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
-    "typecheck": "tsc",
-    "typecheck:watch": "tsc -w",
+    "typecheck": "tsc --noEmit",
+    "typecheck:watch": "tsc --noEmit -w",
     "prepare": "npm test && npm run typecheck && npm run build",
     "prepublishOnly": "npm run prepare"
   },
